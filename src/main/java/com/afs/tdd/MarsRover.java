@@ -1,14 +1,17 @@
 package com.afs.tdd;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.stream.IntStream;
 
 public class MarsRover {
 
     private int locationX;
     private int locationY;
     private String currentDirection;
+
+
     private String[] movementList = new String[]{"M", "L", "R"};
+    private String[] directionList = new String[]{"N", "E", "S", "W"};
 
     public MarsRover(int locationX, int locationY, String currentDirection) {
         this.locationX = locationX;
@@ -24,6 +27,22 @@ public class MarsRover {
         if(movementInstruction == "M"){
             move();
         }
+        if(movementInstruction.equals("L")){
+            turnLeft();
+        }
+    }
+
+    private void turnLeft() {
+        int directionIndex = IntStream.range(0, directionList.length).filter(index-> directionList[index].equals(currentDirection)).findFirst().orElse(-1);
+        if(directionIndex > directionList.length){
+            directionIndex = directionIndex - directionList.length;
+        }
+        if(directionIndex == 0){
+            directionIndex = directionList.length;
+        }
+
+        currentDirection = directionList[directionIndex-1];
+
     }
 
     private void move() {
@@ -69,5 +88,7 @@ public class MarsRover {
         return locationY;
     }
 
-
+    public String getCurrentDirection() {
+        return currentDirection;
+    }
 }

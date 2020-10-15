@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MarsRoverTest {
     @Test
-    void should_return_true_when_validate_movement_instructions_is_M() {
+    void should_return_true_when_validate_movement_instructions_given_movement_instruction_M() {
         //given
         String movementInstruction = "M";
 
@@ -16,11 +16,11 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         //then
-        assertEquals(true,marsRover.validateMovementInstructions(movementInstruction));
+        assertTrue(marsRover.validateMovementInstructions(movementInstruction));
 
     }
     @Test
-    void should_return_false_when_validate_movement_instructions_is_B() {
+    void should_return_false_when_validate_movement_instructions_given_movement_instruction_B() {
         //given
         String movementInstruction = "B";
 
@@ -28,7 +28,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         //then
-        assertEquals(false,marsRover.validateMovementInstructions(movementInstruction));
+        assertFalse(marsRover.validateMovementInstructions(movementInstruction));
 
     }
 

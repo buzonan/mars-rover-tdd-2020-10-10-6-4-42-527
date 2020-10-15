@@ -19,4 +19,16 @@ class MarsRoverTest {
         assertEquals(true,marsRover.validateMovementInstructions(movementInstruction));
 
     }
+    @Test
+    void should_return_false_when_validate_movement_instructions_is_B() {
+        //given
+        String movementInstruction = "B";
+
+        //when
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+
+        //then
+        assertEquals(false,marsRover.validateMovementInstructions(movementInstruction));
+
+    }
 }

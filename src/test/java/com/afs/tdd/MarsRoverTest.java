@@ -38,6 +38,7 @@ class MarsRoverTest {
         //when
         MarsRover marsRover = new MarsRover(0, 0, "N");
         marsRover.executeMovementInstruction(movementInstruction);
+
         //then
         assertEquals(1,marsRover.getLocationY());
 
@@ -51,6 +52,7 @@ class MarsRoverTest {
         //when
         MarsRover marsRover = new MarsRover(0, 0, "S");
         marsRover.executeMovementInstruction(movementInstruction);
+
         //then
         assertEquals(-1,marsRover.getLocationY());
 
@@ -64,6 +66,7 @@ class MarsRoverTest {
         //when
         MarsRover marsRover = new MarsRover(0, 0, "E");
         marsRover.executeMovementInstruction(movementInstruction);
+
         //then
         assertEquals(1,marsRover.getLocationX());
 
@@ -77,6 +80,7 @@ class MarsRoverTest {
         //when
         MarsRover marsRover = new MarsRover(0, 0, "W");
         marsRover.executeMovementInstruction(movementInstruction);
+
         //then
         assertEquals(-1,marsRover.getLocationX());
 

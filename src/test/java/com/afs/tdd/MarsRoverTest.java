@@ -69,5 +69,17 @@ class MarsRoverTest {
 
     }
 
+    @Test
+    void should_return_x_negative_1_when_execute_movement_instruction_given_x_0_y_0_direction_E_and_movement_instruction_M() {
+        //given
+        String movementInstruction = "M";
+
+        //when
+        MarsRover marsRover = new MarsRover(0, 0, "W");
+        marsRover.executeMovementInstruction(movementInstruction);
+        //then
+        assertEquals(-1,marsRover.getLocationX());
+
+    }
 
 }

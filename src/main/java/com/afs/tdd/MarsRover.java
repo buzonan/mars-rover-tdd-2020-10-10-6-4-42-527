@@ -16,7 +16,7 @@ public class MarsRover {
         this.currentDirection = currentDirection;
     }
 
-    public boolean validateMovementInstructions(String movementInstruction) {
+    public boolean validateMovementInstruction(String movementInstruction) {
         return Arrays.stream(movementList).anyMatch(movement->movement.equals(movementInstruction));
     }
 

@@ -2,8 +2,6 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class MarsRoverTest {
@@ -16,7 +14,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         //then
-        assertTrue(marsRover.validateMovementInstructions(movementInstruction));
+        assertTrue(marsRover.validateMovementInstruction(movementInstruction));
 
     }
     @Test
@@ -28,7 +26,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         //then
-        assertFalse(marsRover.validateMovementInstructions(movementInstruction));
+        assertFalse(marsRover.validateMovementInstruction(movementInstruction));
 
     }
 

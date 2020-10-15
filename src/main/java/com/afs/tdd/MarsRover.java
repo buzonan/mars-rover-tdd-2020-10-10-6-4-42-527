@@ -28,19 +28,25 @@ public class MarsRover {
     }
 
     public boolean validateMovementInstruction(String movementInstruction) {
-        return Arrays.stream(movementList).anyMatch(movement->movement.equals(movementInstruction));
+
+        return Arrays.asList(movementList).contains(movementInstruction);
     }
 
-    public void executeMovementInstruction(String movementInstruction) {
-        if(movementInstruction.equals(MOVE)){
-            move();
+    public void executeMovementInstruction(String movementInstruction) throws Exception {
+        if(validateMovementInstruction(movementInstruction)){
+            if(movementInstruction.equals(MOVE)){
+                move();
+            }
+            if(movementInstruction.equals(LEFT)){
+                turnLeft();
+            }
+            if(movementInstruction.equals(RIGHT)){
+                turnRight();
+            }
+        } else {
+            throw new Exception("CommandNotFoundException");
         }
-        if(movementInstruction.equals(LEFT)){
-            turnLeft();
-        }
-        if(movementInstruction.equals(RIGHT)){
-            turnRight();
-        }
+
     }
 
     private void turnRight() {
@@ -71,7 +77,6 @@ public class MarsRover {
                 .orElse(-1);
 
         currentDirection = directionList[directionIndex];
-
     }
 
     private void move() {

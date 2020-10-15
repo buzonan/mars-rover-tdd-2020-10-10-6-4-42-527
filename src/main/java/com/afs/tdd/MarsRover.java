@@ -20,6 +20,27 @@ public class MarsRover {
         return Arrays.stream(movementList).anyMatch(movement->movement.equals(movementInstruction));
     }
 
+    public void executeMovementInstruction(String movementInstruction) {
+        if(movementInstruction == "M"){
+            move();
+        }
+    }
+
+    private void move() {
+        if(currentDirection.equals("N")){
+            locationY += 1;
+        }
+        if(currentDirection.equals("S")){
+            locationY -= 1;
+        }
+        if(currentDirection.equals("E")){
+            locationX += 1;
+        }
+        if(currentDirection.equals("W")){
+            locationX -= 1;
+        }
+    }
+
     public int getLocationX() {
         return locationX;
     }
@@ -43,5 +64,6 @@ public class MarsRover {
     public void setCurrentDirection(String currentDirection) {
         this.currentDirection = currentDirection;
     }
+
 
 }

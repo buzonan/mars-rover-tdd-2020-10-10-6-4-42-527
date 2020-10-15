@@ -30,6 +30,24 @@ public class MarsRover {
         if(movementInstruction.equals("L")){
             turnLeft();
         }
+        if(movementInstruction.equals("R")){
+            turnRight();
+        }
+    }
+
+    private void turnRight() {
+        int directionIndex = IntStream.range(0, directionList.length)
+                .filter(index-> directionList[index].equals(currentDirection))
+                .map(direction->{
+                    if(direction == directionList.length-1){
+                        return 0;
+                    }
+                    return ++direction;
+                })
+                .findFirst()
+                .orElse(-1);
+
+        currentDirection = directionList[directionIndex];
     }
 
     private void turnLeft() {

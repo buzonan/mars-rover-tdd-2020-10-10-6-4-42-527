@@ -10,12 +10,13 @@ class MarsRoverTest {
     @Test
     void should_return_true_when_validate_movement_instructions_is_M() {
         //given
-        List<String> movementInstructions = null;
-        movementInstructions.add("M");
+        String movementInstruction = "M";
+
         //when
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         //then
-        assertEquals(true,marsRover.validateMovementInstructions(movementInstructions));
+        assertEquals(true,marsRover.validateMovementInstructions(movementInstruction));
+
     }
 }

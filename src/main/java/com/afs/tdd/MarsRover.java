@@ -33,15 +33,18 @@ public class MarsRover {
     }
 
     private void turnLeft() {
-        int directionIndex = IntStream.range(0, directionList.length).filter(index-> directionList[index].equals(currentDirection)).findFirst().orElse(-1);
-        if(directionIndex > directionList.length){
-            directionIndex = directionIndex - directionList.length;
-        }
-        if(directionIndex == 0){
-            directionIndex = directionList.length;
-        }
+        int directionIndex = IntStream.range(0, directionList.length)
+                .filter(index-> directionList[index].equals(currentDirection))
+                .map(direction->{
+                    if(direction == 0){
+                        return directionList.length-1;
+                    }
+                    return direction-1;
+                })
+                .findFirst()
+                .orElse(-1);
 
-        currentDirection = directionList[directionIndex-1];
+        currentDirection = directionList[directionIndex];
 
     }
 

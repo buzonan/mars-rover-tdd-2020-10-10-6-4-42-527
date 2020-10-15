@@ -125,6 +125,19 @@ class MarsRoverTest {
         assertEquals("E",marsRover.getCurrentDirection());
     }
 
+    @Test
+    void should_return_direction_S_when_execute_movement_instruction_given_x_0_y_0_direction_W_and_movement_instruction_L() {
+        //given
+        String movementInstruction = "L";
+
+        //when
+        MarsRover marsRover = new MarsRover(0, 0, "W");
+        marsRover.executeMovementInstruction(movementInstruction);
+
+        //then
+        assertEquals("S",marsRover.getCurrentDirection());
+    }
+
 
 
 

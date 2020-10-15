@@ -27,42 +27,46 @@ public class MarsRover {
     }
 
     private void move() {
-        if(currentDirection.equals("N")){
-            locationY += 1;
+        if(isCoordinateX()){
+            updateLocationX(currentDirection);
         }
-        if(currentDirection.equals("S")){
-            locationY -= 1;
+        if(isCoordinateY()){
+            updateLocationY(currentDirection);
         }
-        if(currentDirection.equals("E")){
-            locationX += 1;
+    }
+
+    private void updateLocationY(String currentDirection) {
+        if (currentDirection.equals("N")) {
+            locationY++;
         }
-        if(currentDirection.equals("W")){
-            locationX -= 1;
+        if (currentDirection.equals("S")){
+            locationY--;
         }
+    }
+
+    private void updateLocationX(String currentDirection) {
+        if (currentDirection.equals("E")) {
+            locationX++;
+        }
+        if (currentDirection.equals("W")){
+            locationX--;
+        }
+    }
+
+    private boolean isCoordinateX() {
+        return currentDirection.equals("E") || currentDirection.equals("W");
+    }
+
+    private boolean isCoordinateY() {
+        return currentDirection.equals("N") || currentDirection.equals("S");
     }
 
     public int getLocationX() {
         return locationX;
     }
 
-    public void setLocationX(int locationX) {
-        this.locationX = locationX;
-    }
-
     public int getLocationY() {
         return locationY;
-    }
-
-    public void setLocationY(int locationY) {
-        this.locationY = locationY;
-    }
-
-    public String getCurrentDirection() {
-        return currentDirection;
-    }
-
-    public void setCurrentDirection(String currentDirection) {
-        this.currentDirection = currentDirection;
     }
 
 

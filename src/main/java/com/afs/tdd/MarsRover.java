@@ -57,7 +57,7 @@ public class MarsRover {
                     if(direction == 0){
                         return directionList.length-1;
                     }
-                    return direction-1;
+                    return --direction;
                 })
                 .findFirst()
                 .orElse(-1);

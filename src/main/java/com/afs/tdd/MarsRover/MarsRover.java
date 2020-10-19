@@ -50,7 +50,7 @@ public class MarsRover implements MarsRoverShips {
         if(isDirectionFirstIndex(directionIndex)){
             return Direction.WEST;
         }
-        return Direction.values()[++directionIndex];
+        return Direction.values()[--directionIndex];
     }
 
     private int getDirectionUpdate() {

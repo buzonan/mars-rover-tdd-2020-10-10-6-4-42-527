@@ -12,7 +12,7 @@ import java.util.Map;
 public class CommandListExecutor {
 
     Map<String, Command> marsRoverMovementMap = new HashMap<>();
-    MarsSpaceShipConsole marsSpaceShipConsole;
+    MarsRoverConsole marsRoverConsole;
     public CommandListExecutor(MarsRover marsRover) {
         marsRoverMovementMap.put(Movement.MOVE.getAction(), new Move(marsRover));
         marsRoverMovementMap.put(Movement.LEFT.getAction(), new TurnLeft(marsRover));
@@ -32,8 +32,8 @@ public class CommandListExecutor {
         String EMPTY_STRING = "";
         String[] commandList = commands.split(EMPTY_STRING);
         for(String command : commandList){
-            marsSpaceShipConsole = new MarsSpaceShipConsole(marsRoverMovementMap.get(command));
-            marsSpaceShipConsole.executeAction();
+            marsRoverConsole = new MarsRoverConsole(marsRoverMovementMap.get(command));
+            marsRoverConsole.executeAction();
         }
     }
 }

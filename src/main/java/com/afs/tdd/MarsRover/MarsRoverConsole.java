@@ -1,9 +1,9 @@
 package com.afs.tdd.MarsRover;
 
-public class MarsSpaceShipConsole {
+public class MarsRoverConsole {
     Command command;
 
-    public MarsSpaceShipConsole(Command command) {
+    public MarsRoverConsole(Command command) {
         this.command = command;
     }
 

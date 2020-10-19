@@ -41,31 +41,23 @@ class MarsRoverTest {
         //then
         assertThrows(CommandNotDefinedException.class, () -> commandListExecutor.sendMarsRoverCommand(command));
     }
-//
-//    @Test
-//    void should_return_y_1_when_execute_movement_instruction_given_x_0_y_0_direction_N_and_movement_instruction_M() {
-//        //given
-//        List<String> movementInstruction = new ArrayList<>();
-//        movementInstruction.add("M");
-//
-//        Commands commands = new Commands(movementInstruction);
-//
-//        //when
-//        MarsRover marsRover = new MarsRover(0, 0, "N");
-//
-//        Move moveCommand = new Move(marsRover);
-//
-//        MarsSpaceShipConsole marsSpaceShipConsole = new MarsSpaceShipConsole(moveCommand);
-//
-//        marsSpaceShipConsole.executeAction();
-//
-//        //then
-//        assertEquals(1,marsRover.getPositionY());
-//        assertEquals(0,marsRover.getPositionX());
-//        assertEquals("N",marsRover.getDirection());
-//
-//    }
-//
+
+    @Test
+    void should_return_y_1_when_sendMarsRoverCommand_given_x_0_y_0_direction_NORTH_and_command_M() {
+        //given
+        String command = "M";
+        MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
+        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+
+        //when
+        commandListExecutor.sendMarsRoverCommand(command);
+
+        //then
+        assertEquals(1,marsRover.getPositionY());
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(Direction.NORTH,marsRover.getDirection());
+    }
+
 //    @Test
 //    void should_return_y_negative_1_when_execute_movement_instruction_given_x_0_y_0_direction_S_and_movement_instruction_M() {
 //        //given

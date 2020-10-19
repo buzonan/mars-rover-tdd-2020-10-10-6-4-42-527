@@ -109,199 +109,138 @@ class MarsRoverTest {
         assertEquals(Direction.EAST, marsRover.getDirection());
 
     }
-//
-//    @Test
-//    void should_return_direction_W_when_execute_movement_instruction_given_x_0_y_0_direction_N_and_movement_instruction_L() {
-//        //given
-//        List<String> movementInstruction = new ArrayList<>();
-//        movementInstruction.add("L");
-//
-//        Commands commands = new Commands(movementInstruction);
-//
-//
-//        //when
-//        MarsRover marsRover = new MarsRover(0, 0, "N");
-//        commands.getCommandList().forEach(command-> {
-//            try {
-//                marsRover.executeMovementInstruction(command);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        });
-//
-//        //then
-//        assertEquals(0,marsRover.getPositionY());
-//        assertEquals(0,marsRover.getPositionX());
-//        assertEquals("W",marsRover.getDirection());
-//    }
-//
-//    @Test
-//    void should_return_direction_N_when_execute_movement_instruction_given_x_0_y_0_direction_E_and_movement_instruction_L() {
-//        //given
-//        List<String> movementInstruction = new ArrayList<>();
-//        movementInstruction.add("L");
-//
-//        Commands commands = new Commands(movementInstruction);
-//
-//        //when
-//        MarsRover marsRover = new MarsRover(0, 0, "E");
-//        commands.getCommandList().forEach(command-> {
-//            try {
-//                marsRover.executeMovementInstruction(command);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        });
-//
-//        //then
-//        assertEquals(0,marsRover.getPositionY());
-//        assertEquals(0,marsRover.getPositionX());
-//        assertEquals("N",marsRover.getDirection());
-//    }
-//
-//    @Test
-//    void should_return_direction_E_when_execute_movement_instruction_given_x_0_y_0_direction_S_and_movement_instruction_L() {
-//        //given
-//        List<String> movementInstruction = new ArrayList<>();
-//        movementInstruction.add("L");
-//
-//        Commands commands = new Commands(movementInstruction);
-//
-//        //when
-//        MarsRover marsRover = new MarsRover(0, 0, "S");
-//        commands.getCommandList().forEach(command-> {
-//            try {
-//                marsRover.executeMovementInstruction(command);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        });
-//
-//        //then
-//        assertEquals(0,marsRover.getPositionY());
-//        assertEquals(0,marsRover.getPositionX());
-//        assertEquals("E",marsRover.getDirection());
-//    }
-//
-//    @Test
-//    void should_return_direction_S_when_execute_movement_instruction_given_x_0_y_0_direction_W_and_movement_instruction_L() {
-//        //given
-//        List<String> movementInstruction = new ArrayList<>();
-//        movementInstruction.add("L");
-//
-//        Commands commands = new Commands(movementInstruction);
-//
-//        //when
-//        MarsRover marsRover = new MarsRover(0, 0, "W");
-//        commands.getCommandList().forEach(command-> {
-//            try {
-//                marsRover.executeMovementInstruction(command);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        });
-//
-//        //then
-//        assertEquals(0,marsRover.getPositionY());
-//        assertEquals(0,marsRover.getPositionX());
-//        assertEquals("S",marsRover.getDirection());
-//    }
-//
-//    @Test
-//    void should_return_direction_E_when_execute_movement_instruction_given_x_0_y_0_direction_N_and_movement_instruction_R() {
-//        //given
-//        List<String> movementInstruction = new ArrayList<>();
-//        movementInstruction.add("R");
-//
-//        Commands commands = new Commands(movementInstruction);
-//
-//        //when
-//        MarsRover marsRover = new MarsRover(0, 0, "N");
-//        commands.getCommandList().forEach(command-> {
-//            try {
-//                marsRover.executeMovementInstruction(command);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        });
-//
-//        //then
-//        assertEquals(0,marsRover.getPositionY());
-//        assertEquals(0,marsRover.getPositionX());
-//        assertEquals("E",marsRover.getDirection());
-//    }
-//
-//    @Test
-//    void should_return_direction_S_when_execute_movement_instruction_given_x_0_y_0_direction_E_and_movement_instruction_R() {
-//        //given
-//        List<String> movementInstruction = new ArrayList<>();
-//        movementInstruction.add("R");
-//
-//        Commands commands = new Commands(movementInstruction);
-//
-//        //when
-//        MarsRover marsRover = new MarsRover(0, 0, "E");
-//        commands.getCommandList().forEach(command-> {
-//            try {
-//                marsRover.executeMovementInstruction(command);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        });
-//
-//        //then
-//        assertEquals(0,marsRover.getPositionY());
-//        assertEquals(0,marsRover.getPositionX());
-//        assertEquals("S",marsRover.getDirection());
-//    }
-//
-//    @Test
-//    void should_return_direction_W_when_execute_movement_instruction_given_x_0_y_0_direction_S_and_movement_instruction_R() {
-//        //given
-//        List<String> movementInstruction = new ArrayList<>();
-//        movementInstruction.add("R");
-//
-//        Commands commands = new Commands(movementInstruction);
-//
-//        //when
-//        MarsRover marsRover = new MarsRover(0, 0, "S");
-//        commands.getCommandList().forEach(command-> {
-//            try {
-//                marsRover.executeMovementInstruction(command);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        });
-//
-//        //then
-//        assertEquals(0,marsRover.getPositionY());
-//        assertEquals(0,marsRover.getPositionX());
-//        assertEquals("W",marsRover.getDirection());
-//    }
-//
-//    @Test
-//    void should_return_direction_N_when_execute_movement_instruction_given_x_0_y_0_direction_W_and_movement_instruction_R(){
-//        //given
-//        List<String> movementInstruction = new ArrayList<>();
-//        movementInstruction.add("R");
-//
-//        Commands commands = new Commands(movementInstruction);
-//
-//        //when
-//        MarsRover marsRover = new MarsRover(0, 0, "W");
-//        commands.getCommandList().forEach(command-> {
-//            try {
-//                marsRover.executeMovementInstruction(command);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        });
-//
-//        //then
-//        assertEquals(0,marsRover.getPositionY());
-//        assertEquals(0,marsRover.getPositionX());
-//        assertEquals("N",marsRover.getDirection());
-//    }
-//
+
+    @Test
+    void should_return_direction_WEST_when_sendMarsRoverCommand_given_x_0_y_0_direction_N_and_command_L() {
+        //given
+        String command = "L";
+        MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
+        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+
+        //when
+        commandListExecutor.sendMarsRoverCommand(command);
+
+        //then
+        assertEquals(0,marsRover.getPositionY());
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(Direction.WEST, marsRover.getDirection());
+    }
+
+    @Test
+    void should_return_direction_NORTH_when_sendMarsRoverCommand_given_x_0_y_0_direction_E_and_command_L() {
+        //given
+        String command = "L";
+        MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
+        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+
+        //when
+        commandListExecutor.sendMarsRoverCommand(command);
+
+        //then
+        assertEquals(0,marsRover.getPositionY());
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(Direction.NORTH, marsRover.getDirection());
+    }
+
+    @Test
+    void should_return_direction_E_when_sendMarsRoverCommand_given_x_0_y_0_direction_S_and_command_L() {
+        //given
+        String command = "L";
+        MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
+        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+
+        //when
+        commandListExecutor.sendMarsRoverCommand(command);
+
+        //then
+        assertEquals(0,marsRover.getPositionY());
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(Direction.EAST, marsRover.getDirection());
+    }
+
+    @Test
+    void should_return_direction_S_when_sendMarsRoverCommand_given_x_0_y_0_direction_W_and_command_L() {
+        //given
+        String command = "L";
+        MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
+        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+
+        //when
+        commandListExecutor.sendMarsRoverCommand(command);
+
+        //then
+        assertEquals(0,marsRover.getPositionY());
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(Direction.SOUTH, marsRover.getDirection());
+    }
+
+    @Test
+    void should_return_direction_E_when_sendMarsRoverCommand_given_x_0_y_0_direction_N_and_command_R() {
+        //given
+        String command = "R";
+        MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
+        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+
+        //when
+        commandListExecutor.sendMarsRoverCommand(command);
+
+
+        //then
+        assertEquals(0,marsRover.getPositionY());
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(Direction.EAST, marsRover.getDirection());
+    }
+
+    @Test
+    void should_return_direction_S_when_sendMarsRoverCommand_given_x_0_y_0_direction_E_and_command_R() {
+        //given
+        String command = "R";
+        MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
+        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+
+        //when
+        commandListExecutor.sendMarsRoverCommand(command);
+
+
+        //then
+        assertEquals(0,marsRover.getPositionY());
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(Direction.SOUTH, marsRover.getDirection());
+    }
+
+    @Test
+    void should_return_direction_W_when_sendMarsRoverCommand_given_x_0_y_0_direction_S_and_command_R() {
+        //given
+        String command = "R";
+        MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
+        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+
+        //when
+        commandListExecutor.sendMarsRoverCommand(command);
+
+
+        //then
+        assertEquals(0,marsRover.getPositionY());
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(Direction.WEST, marsRover.getDirection());
+    }
+
+    @Test
+    void should_return_direction_N_when_sendMarsRoverCommand_given_x_0_y_0_direction_W_and_command_R(){
+        //given
+        String command = "R";
+        MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
+        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+
+        //when
+        commandListExecutor.sendMarsRoverCommand(command);
+
+
+        //then
+        assertEquals(0,marsRover.getPositionY());
+        assertEquals(0,marsRover.getPositionX());
+        assertEquals(Direction.NORTH, marsRover.getDirection());
+    }
+
 
 }

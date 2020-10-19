@@ -27,7 +27,19 @@ public class MarsRover implements MarsRoverShips {
 
     @Override
     public void turnRight() {
+        int directionIndex = getDirectionUpdate();
+        direction = getTurnRightDirection(directionIndex);
+    }
 
+    private Direction getTurnRightDirection(int directionIndex) {
+        if(IsDirectionLastIndex(directionIndex)){
+            return Direction.NORTH;
+        }
+        return Direction.values()[++directionIndex];
+    }
+
+    private boolean IsDirectionLastIndex(int directionOrdinal) {
+        return directionOrdinal == Direction.values().length-1;
     }
 
     private boolean isDirectionFirstIndex(int directionOrdinal) {

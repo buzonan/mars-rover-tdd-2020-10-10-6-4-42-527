@@ -21,12 +21,28 @@ public class MarsRover implements MarsRoverShips {
 
     @Override
     public void turnLeft() {
-
+        int directionIndex = getDirectionUpdate();
+        direction = getTurnLeftDirection(directionIndex);
     }
 
     @Override
     public void turnRight() {
 
+    }
+
+    private boolean isDirectionFirstIndex(int directionOrdinal) {
+        return directionOrdinal == 0;
+    }
+
+    private Direction getTurnLeftDirection(int directionIndex) {
+        if(isDirectionFirstIndex(directionIndex)){
+            return Direction.WEST;
+        }
+        return Direction.values()[++directionIndex];
+    }
+
+    private int getDirectionUpdate() {
+        return direction.ordinal();
     }
 
     private void updatePositionX() {

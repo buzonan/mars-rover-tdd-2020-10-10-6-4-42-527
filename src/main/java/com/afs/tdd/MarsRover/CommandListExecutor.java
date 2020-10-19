@@ -7,14 +7,12 @@ import com.afs.tdd.MarsRover.standard.Movement;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class CommandListExecutor {
 
-    private final String EMPTY_STRING = "";
     Map<String, Command> marsRoverMovementMap = new HashMap<>();
-
+    MarsSpaceShipConsole marsSpaceShipConsole;
     public CommandListExecutor(MarsRover marsRover) {
         marsRoverMovementMap.put(Movement.MOVE.getAction(), new Move(marsRover));
         marsRoverMovementMap.put(Movement.LEFT.getAction(), new TurnLeft(marsRover));
@@ -31,9 +29,11 @@ public class CommandListExecutor {
 
     public void sendMarsRoverCommand(String commands) throws CommandNotDefinedException {
         validateMovementCommand(commands);
-        List<String> commandList = Arrays.asList(commands.split(EMPTY_STRING));
+        String EMPTY_STRING = "";
+        String[] commandList = commands.split(EMPTY_STRING);
         for(String command : commandList){
-            marsRoverMovementMap.get(command).execute();
+            marsSpaceShipConsole = new MarsSpaceShipConsole(marsRoverMovementMap.get(command));
+            marsSpaceShipConsole.executeAction();
         }
     }
 }

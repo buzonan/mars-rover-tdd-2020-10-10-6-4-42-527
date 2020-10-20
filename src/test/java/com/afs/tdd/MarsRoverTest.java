@@ -1,9 +1,9 @@
 package com.afs.tdd;
 
-import com.afs.tdd.MarsRover.CommandListExecutor;
-import com.afs.tdd.MarsRover.CommandNotDefinedException;
+import com.afs.tdd.MarsRover.CommandReceiver;
+import com.afs.tdd.MarsRover.exception.CommandNotDefinedException;
 import com.afs.tdd.MarsRover.MarsRover;
-import com.afs.tdd.MarsRover.standard.Direction;
+import com.afs.tdd.MarsRover.enums.Direction;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,12 +15,12 @@ class MarsRoverTest {
     void should_return_true_when_validate_movement_instructions_given_command_MLMR() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         String command = "MLMR";
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
         //then
         assertEquals(1,marsRover.getPositionY());
@@ -35,11 +35,11 @@ class MarsRoverTest {
 
         //when
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
 
         //then
-        assertThrows(CommandNotDefinedException.class, () -> commandListExecutor.sendMarsRoverCommand(command));
+        assertThrows(CommandNotDefinedException.class, () -> commandReceiver.sendMarsRoverCommand(command));
     }
 
     @Test
@@ -47,10 +47,10 @@ class MarsRoverTest {
         //given
         String command = "M";
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
         //then
         assertEquals(1,marsRover.getPositionY());
@@ -63,10 +63,10 @@ class MarsRoverTest {
         //given
         String command = "M";
         MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
         //then
         assertEquals(-1,marsRover.getPositionY());
@@ -80,10 +80,10 @@ class MarsRoverTest {
         //given
         String command = "M";
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
         //then
         assertEquals(0,marsRover.getPositionY());
@@ -97,11 +97,11 @@ class MarsRoverTest {
         //given
         String command = "M";
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
         //then
         assertEquals(1,marsRover.getPositionX());
@@ -115,10 +115,10 @@ class MarsRoverTest {
         //given
         String command = "L";
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
         //then
         assertEquals(0,marsRover.getPositionY());
@@ -131,10 +131,10 @@ class MarsRoverTest {
         //given
         String command = "L";
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
         //then
         assertEquals(0,marsRover.getPositionY());
@@ -147,10 +147,10 @@ class MarsRoverTest {
         //given
         String command = "L";
         MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
         //then
         assertEquals(0,marsRover.getPositionY());
@@ -163,10 +163,10 @@ class MarsRoverTest {
         //given
         String command = "L";
         MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
         //then
         assertEquals(0,marsRover.getPositionY());
@@ -179,10 +179,10 @@ class MarsRoverTest {
         //given
         String command = "R";
         MarsRover marsRover = new MarsRover(0, 0, Direction.NORTH);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
 
         //then
@@ -196,10 +196,10 @@ class MarsRoverTest {
         //given
         String command = "R";
         MarsRover marsRover = new MarsRover(0, 0, Direction.EAST);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
 
         //then
@@ -213,10 +213,10 @@ class MarsRoverTest {
         //given
         String command = "R";
         MarsRover marsRover = new MarsRover(0, 0, Direction.SOUTH);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
 
         //then
@@ -230,10 +230,10 @@ class MarsRoverTest {
         //given
         String command = "R";
         MarsRover marsRover = new MarsRover(0, 0, Direction.WEST);
-        CommandListExecutor commandListExecutor = new CommandListExecutor(marsRover);
+        CommandReceiver commandReceiver = new CommandReceiver(marsRover);
 
         //when
-        commandListExecutor.sendMarsRoverCommand(command);
+        commandReceiver.sendMarsRoverCommand(command);
 
 
         //then

@@ -1,6 +1,6 @@
 package com.afs.tdd.MarsRover;
 
-public interface MarsRoverShips {
+public interface MarsRoverCommand {
     void move();
     void turnLeft();
     void turnRight();

@@ -1,5 +1,5 @@
 package com.afs.tdd.MarsRover;
 
-public interface Command {
+public interface CommandExecutor {
     void execute();
 }

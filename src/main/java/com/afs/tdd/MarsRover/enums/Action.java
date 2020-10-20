@@ -1,13 +1,13 @@
-package com.afs.tdd.MarsRover.standard;
+package com.afs.tdd.MarsRover.enums;
 
-public enum Movement {
+public enum Action {
     MOVE("M"),
     LEFT("L"),
     RIGHT("R");
 
     private String action;
 
-    Movement(String action) {
+    Action(String action) {
         this.action = action;
     }
 

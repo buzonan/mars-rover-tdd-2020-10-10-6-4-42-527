@@ -1,4 +1,4 @@
-package com.afs.tdd.MarsRover.standard;
+package com.afs.tdd.MarsRover.enums;
 
 public enum Direction {
     NORTH,

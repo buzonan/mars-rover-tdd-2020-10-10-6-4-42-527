@@ -1,8 +1,8 @@
 package com.afs.tdd.MarsRover;
 
-import com.afs.tdd.MarsRover.standard.Direction;
+import com.afs.tdd.MarsRover.enums.Direction;
 
-public class MarsRover implements MarsRoverShips {
+public class MarsRover implements MarsRoverCommand {
     private int positionX;
     private int positionY;
     private Direction direction;
